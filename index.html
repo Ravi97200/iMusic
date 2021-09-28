@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background-image: url(img/image.png);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .navbar{
+            width: 88%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo{
+            width: 140px;
+            cursor: pointer;
+
+        }
+        .navbar ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 15px;
+
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            color: #5f5f5f;
+            font-size: 15px;
+        }
+        .content{
+            width: 100%;
+            position: absolute;
+            top: 30%;
+        }
+        .left-col{
+            margin-left: 6%;
+        }
+        .left-col h1{
+            font-size: 90px;
+            color: #fff;
+            line-height: 110px;
+            float: left;
+        }
+        .right-col{
+            float: right;
+            margin-right: 6%;
+            margin-top: 120px;
+            display: flex;
+            align-items: center;
+        }
+        .right-col p{
+            font-size: 18px;
+            color: #5f5f5f;
+            font-weight: 400;
+            margin-right: 15px;
+        }
+        #icon{
+            width: 80px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="img/logo.png" alt="loaded" class="logo">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SPECIFICATIONS</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">CONNECT</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="left-col">
+            <h1>THE<br> REAL <br>SOUND</h1>
+        </div>
+        <div class="right-col">
+            <p>Click Here To Listen</p>
+            <img src="img/play.png" id="icon" alt="loaded">
+        </div>
+
+    </div>
+    <audio id="song">
+        <source src="song.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        var icon=document.getElementById("icon");
+        var song=document.getElementById("song")
+        icon.onclick=function(){
+            if(song.paused){
+                song.play();
+                icon.src="img/pause.png";
+            }else{
+                song.pause();
+                icon.src="img/play.png";
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>
